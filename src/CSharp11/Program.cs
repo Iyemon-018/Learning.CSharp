@@ -1,6 +1,10 @@
 ﻿// See https://aka.ms/new-console-template for more information
 //Console.WriteLine("Hello, World!");
 
+// cf.
+//    https://learn.microsoft.com/ja-jp/dotnet/csharp/whats-new/csharp-11
+//    https://ufcpp.net/study/csharp/cheatsheet/ap_ver11/
+
 using System.Reflection;
 using CSharp11;
 
