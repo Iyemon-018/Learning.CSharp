@@ -47,3 +47,26 @@ var p = new Person();
 // required を使うことでオブジェクト初期化子を使用してプロパティの初期化を強制することができる。
 var p2 = new Person2 {FirstName = "John", LastName = "Smith"};
 var p3 = new Person2("John", "Smith");
+
+// 生文字列リテラル(raw string literal)
+var s = """
+    ここに書いたコードはエスケープ不要で書いた文字列がそのまま出力される。
+        インデントも有効。 
+    {} \"" などを書いても問題ない。
+    "を3つ連続の場合にはリテラルと被るのでだめ。ただし、前後の"3つを4つに変えると"3つを含むことができる。
+    前後の"は3つ以上であればよくて、前後で同じ数になっていればいいので。
+    """;
+var s2 = $"""
+    {DateTime.Now:yyyy-MM-dd hh:mm:ss}
+    $" とすることで書式設定もできる。
+    """;
+var s3 = """
+    インデントの位置は末尾の"3つのインデントが基準となる。
+    Visual Studio だと垂直線が見えるのでわかりやすい。
+        この行だとインデント1つ深くなる。
+            この行だと2つ。こんな感じで書ける。
+    """;
+
+Console.WriteLine(s);
+Console.WriteLine(s2);
+Console.WriteLine(s3);
