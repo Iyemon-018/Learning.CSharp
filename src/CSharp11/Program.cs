@@ -38,3 +38,12 @@ Console.WriteLine($@"(C#10) Now:{
     DateTime.Now
 }");
 
+// 必須メンバー
+var p = new Person();
+// 以下の書き方だとコンパイルエラーになる。
+// デフォルトコンストラクタで required プロパティを設定していないので。
+//var p2 = new Person2();
+// 以下はどちらもコンパイルが通る。
+// required を使うことでオブジェクト初期化子を使用してプロパティの初期化を強制することができる。
+var p2 = new Person2 {FirstName = "John", LastName = "Smith"};
+var p3 = new Person2("John", "Smith");
