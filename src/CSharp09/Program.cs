@@ -5,11 +5,11 @@
 
 using System;
 
-internal class Program
+public static partial class Program
 {
     public static void Main(string[] args)
     {
-        Console.WriteLine("Hello, World!");
+        HelloFrom("Generated Code");
     }
     static partial void HelloFrom(string name);
 }
