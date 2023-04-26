@@ -3,13 +3,15 @@
 // 以下の手順を試す。
 // cf. https://learn.microsoft.com/ja-jp/dotnet/csharp/roslyn-sdk/source-generators-overview#get-started-with-source-generators
 
-using System;
-
-public static partial class Program
+namespace CSharp09
 {
-    public static void Main(string[] args)
+    public static partial class Program
     {
-        HelloFrom("Generated Code");
+        public static void Main(string[] args)
+        {
+            HelloFrom("Generated Code");
+        }
+
+        static partial void HelloFrom(string name);
     }
-    static partial void HelloFrom(string name);
 }
