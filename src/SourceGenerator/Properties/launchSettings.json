@@ -1,8 +1,5 @@
 {
   "profiles": {
-    "SourceGenerator": {
-      "commandName": "Project"
-    },
     "プロファイル 1": {
       "commandName": "DebugRoslynComponent",
       "targetProject": "..\\CSharp09\\CSharp09.csproj"

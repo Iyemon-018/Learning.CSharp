@@ -7,13 +7,25 @@
 // cf. https://neue.cc/2022/12/16_IncrementalSourceGenerator.html
 namespace CSharp09
 {
+    using System;
+
     public static partial class Program
     {
         public static void Main(string[] args)
         {
             HelloFrom("Generated Code");
+
+            Console.WriteLine(new Hello{Name = "John Smith", Age = 33}.ToString());
         }
 
         static partial void HelloFrom(string name);
+    }
+
+    [GenerateToString]
+    public partial class Hello
+    {
+        public string Name { get; set; }
+
+        public int Age { get; set; }
     }
 }
