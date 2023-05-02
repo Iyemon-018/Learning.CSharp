@@ -116,7 +116,7 @@ namespace CSharp09
                      + $"    }}\r\n"
                      + $"}}\r\n";
 
-            context.AddSource($"{fullType}\\SampleGenerator.g.cs", code);
+            context.AddSource($"{fullType}.SampleGenerator.g.cs", code);
         }
     }
 
