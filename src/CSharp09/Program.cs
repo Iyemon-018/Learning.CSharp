@@ -5,6 +5,10 @@
 // こっちも参考になりそう。
 // 以下には SourceGenerator のデバッグ手順が記載されているので、こちらは必ず設定すること。
 // cf. https://neue.cc/2022/12/16_IncrementalSourceGenerator.html
+
+using CSharp09;
+using Csharp09.Nested;
+
 namespace CSharp09
 {
     using System;
@@ -21,6 +25,10 @@ namespace CSharp09
         static partial void HelloFrom(string name);
     }
 
+}
+
+namespace Csharp09.Nested
+{
     [GenerateToString]
     public partial class Hello
     {
