@@ -12,6 +12,8 @@ using Csharp09.Nested;
 namespace CSharp09
 {
     using System;
+    using System.Linq;
+    using Records;
 
     public static partial class Program
     {
@@ -20,6 +22,15 @@ namespace CSharp09
             HelloFrom("Generated Code");
 
             Console.WriteLine(new Hello{Name = "John Smith", Age = 33}.ToString());
+
+            var person = new Person("John Smith", 20);
+            Console.WriteLine(person);  // Person { Name = John Smith, Age = 20 }
+
+            var people = Enumerable.Range(1, 3).Select(x => new Person($"No.{x}", x * 10));
+            Console.WriteLine(string.Join("/", people.Select(x => x.ToString())));  // Person { Name = No.1, Age = 10 }/Person { Name = No.2, Age = 20 }/Person { Name = No.3, Age = 30 }
+
+            var user = new User(1234, "John Smith", 29, new Birthday(new DateTime(2020, 2, 19)));
+            Console.WriteLine(user);    // User { Id = 1234, Birthday = Birthday { Value = 2020/02/19 0:00:00 } }
         }
 
         static partial void HelloFrom(string name);
@@ -36,4 +47,17 @@ namespace Csharp09.Nested
 
         public int Age { get; set; }
     }
+}
+
+namespace CSharp09.Records
+{
+    using System;
+
+    public record Person(string Name, int Age);
+
+    public record Birthday(DateTime Value);
+
+    // record 型をメンバに持つ record 型も作ることができる。
+    // record 型であれば継承もできる。クラスに継承することはできない。  
+    public record User(int Id, string Name, int Age, Birthday Birthday): Person(Name, Age);
 }
