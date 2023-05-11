@@ -76,6 +76,8 @@ namespace CSharp09.Init
     using System;
 
     // cf. https://learn.microsoft.com/ja-jp/dotnet/csharp/whats-new/csharp-9#init-only-setters
+    // プロパティの setter に init を付けることで、プロパティ初期化子で設定した値の再代入ができなくなる。
+    // これまではコンストラクタから代入する必要があったが、その必要性がなくなった。
     public record WeatherObservation
     {
         public DateTime RecordedAt { get; init; }
